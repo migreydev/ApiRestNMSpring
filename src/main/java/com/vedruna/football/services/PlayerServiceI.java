@@ -7,4 +7,5 @@ import com.vedruna.football.dto.PlayerDTO;
 public interface PlayerServiceI {
 
 	List<PlayerDTO> getAllPlayers();
+	PlayerDTO getPlayerByUsername(String username);
 }

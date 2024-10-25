@@ -29,4 +29,11 @@ public class PlayerServiceImpI implements PlayerServiceI{
 		return playersDTO;
 	}
 
+	@Override
+	public PlayerDTO getPlayerByUsername(String username) {
+		PlayerDTO playerDTO = new PlayerDTO(playerRepository.findByUsername(username));
+		return playerDTO;
+		
+	}
+
 }
