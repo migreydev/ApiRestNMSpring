@@ -27,4 +27,17 @@ public class TrophieServiceImpI implements TrophieServiceI{
 		return trophiesDTO;
 	}
 
+	@Override
+	public void addTrophy(TrophieDTO trophie) {
+		Trophie newTrophie = new Trophie();
+		
+		newTrophie.setIdtrophie(trophie.getIdTrophy());
+		newTrophie.setTitle(trophie.getTitle());
+		newTrophie.setDescription(trophie.getDescription());
+		newTrophie.setPlayerHasTrophies(null);
+		
+		trophieRepository.save(newTrophie);
+		
+	}
+
 }

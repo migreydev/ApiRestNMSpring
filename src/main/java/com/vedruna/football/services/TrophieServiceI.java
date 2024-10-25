@@ -7,5 +7,6 @@ import com.vedruna.football.dto.TrophieDTO;
 public interface TrophieServiceI {
 	
 	List<TrophieDTO> getAllTrophies();
+	void addTrophy (TrophieDTO trophie);
 
 }
