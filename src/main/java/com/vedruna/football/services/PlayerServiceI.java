@@ -8,4 +8,5 @@ public interface PlayerServiceI {
 
 	List<PlayerDTO> getAllPlayers();
 	PlayerDTO getPlayerByUsername(String username);
+	void addPlayer(PlayerDTO playerDTO);
 }

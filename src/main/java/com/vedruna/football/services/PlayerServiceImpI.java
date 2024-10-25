@@ -36,4 +36,15 @@ public class PlayerServiceImpI implements PlayerServiceI{
 		
 	}
 
+	@Override
+	public void addPlayer(PlayerDTO playerDTO) {
+		Player newPlayer = new Player();
+		
+		newPlayer.setIdplayer(playerDTO.getIdPlayer());
+		newPlayer.setUsername(playerDTO.getUsername());
+		newPlayer.setPlayerHasTrophies(null);
+		playerRepository.save(newPlayer);
+		
+	}
+
 }
