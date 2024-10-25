@@ -47,4 +47,19 @@ public class PlayerServiceImpI implements PlayerServiceI{
 		
 	}
 
+	@Override
+	public void deletePlayer(PlayerDTO playerDTO) {
+		Player player = playerRepository.findByUsername(playerDTO.getUsername());
+		playerRepository.delete(player);
+		
+	}
+
+	@Override
+	public PlayerDTO getPlayerByIdplayer(int id) {
+		PlayerDTO player = new PlayerDTO (playerRepository.findByidplayer(id));
+		return player;
+	}
+	
+	
+
 }

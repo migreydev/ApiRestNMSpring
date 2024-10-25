@@ -3,6 +3,7 @@ package com.vedruna.football.persistance.models;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,7 +28,7 @@ public class Player {
 	@Column(name="username")
 	private String username;
 	
-	@OneToMany(mappedBy = "player")
+	@OneToMany(mappedBy = "player", cascade = CascadeType.ALL)
     private List<PlayerHasTrophy> playerHasTrophies;
 
 }
