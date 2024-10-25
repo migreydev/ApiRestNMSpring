@@ -20,7 +20,7 @@ public class Trophie {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="idthophie")
+	@Column(name="idtrophie")
 	private int idtrophie;
 	
 	@Column(name="title")

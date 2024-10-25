@@ -6,6 +6,6 @@ import com.vedruna.football.persistance.models.Player;
 
 public interface PlayerRepository extends JpaRepository<Player, Integer>{
 	
-	Player findByName(String name);
+	Player findByUsername(String username);
 	
 }

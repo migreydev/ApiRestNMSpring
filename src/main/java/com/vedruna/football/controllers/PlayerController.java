@@ -1,9 +1,13 @@
 package com.vedruna.football.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.vedruna.football.dto.PlayerDTO;
 import com.vedruna.football.services.PlayerServiceImpI;
 
 @RestController
@@ -12,5 +16,10 @@ public class PlayerController {
 	
 	@Autowired
 	PlayerServiceImpI playerService;
+	
+	@GetMapping()
+	public List<PlayerDTO> getAllPlayers (){
+		return playerService.getAllPlayers();
+	}
 
 }
