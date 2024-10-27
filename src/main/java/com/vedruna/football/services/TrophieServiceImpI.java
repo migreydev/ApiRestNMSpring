@@ -6,9 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.vedruna.football.dto.PlayerDTO;
 import com.vedruna.football.dto.TrophieDTO;
-import com.vedruna.football.persistance.models.Player;
 import com.vedruna.football.persistance.models.Trophie;
 import com.vedruna.football.persistance.repository.PlayerRepository;
 import com.vedruna.football.persistance.repository.TrophieRepository;
