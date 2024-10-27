@@ -2,6 +2,8 @@ package com.vedruna.football.persistance.models;
 
 import java.util.List;
 
+import com.vedruna.football.dto.TrophieDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,5 +33,16 @@ public class Trophie {
 	
 	@OneToMany(mappedBy = "trophie")
     private List<PlayerHasTrophy> playerHasTrophies;
+	
+	
+	public Trophie(TrophieDTO trophieDTO) {
+		this.idtrophie= trophieDTO.getIdTrophy();
+	    this.title = trophieDTO.getTitle();
+	    this.description = trophieDTO.getDescription();
+	    
+	}
+
+
+	
 
 }

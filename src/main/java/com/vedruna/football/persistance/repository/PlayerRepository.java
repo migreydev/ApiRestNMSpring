@@ -9,4 +9,5 @@ public interface PlayerRepository extends JpaRepository<Player, Integer>{
 	Player findByUsername(String username);
 	Player findByidplayer(int id);
 	
+	
 }

@@ -18,6 +18,7 @@ public class TrophieController {
 	
 	@Autowired
 	TrophieServiceImpI trophieService;
+	
 
 	@GetMapping()
 	public List<TrophieDTO> getAllTrophies(){
@@ -28,4 +29,7 @@ public class TrophieController {
 	public void addTrophy(@RequestBody TrophieDTO trophy) {
 		trophieService.addTrophy(trophy);
 	}
+	
+	
 }
+

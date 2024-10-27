@@ -59,6 +59,18 @@ public class PlayerServiceImpI implements PlayerServiceI{
 		PlayerDTO player = new PlayerDTO (playerRepository.findByidplayer(id));
 		return player;
 	}
+
+	@Override
+	public Player getPlayerByUser(String username) {
+		Player player = playerRepository.findByUsername(username);
+		return player;
+	}
+
+	@Override
+	public Player getPlayerById(int id) {
+		Player player = playerRepository.findByidplayer(id);
+		return player;
+	}
 	
 	
 

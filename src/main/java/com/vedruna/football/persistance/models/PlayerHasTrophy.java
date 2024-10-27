@@ -1,7 +1,9 @@
 package com.vedruna.football.persistance.models;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -11,6 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
+@IdClass(PlayerHasTrophyId.class) 
 @Table(name="players_has_trophies")
 public class PlayerHasTrophy {
 	
@@ -23,5 +26,5 @@ public class PlayerHasTrophy {
     @ManyToOne
     @JoinColumn(name = "trophies_idtrophie")
 	private Trophie trophie;
-
+	
 }
