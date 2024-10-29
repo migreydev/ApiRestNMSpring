@@ -34,7 +34,7 @@ public class TrophieServiceImpI implements TrophieServiceI{
 	@Override
 	public void addTrophy(TrophieDTO trophie) {
 		Trophie newTrophie = new Trophie(trophie);
-		newTrophie.setPlayerHasTrophies(null);
+		newTrophie.setPlayerHasTrophies(new ArrayList<>());
 		
 		trophieRepository.save(newTrophie);
 		
