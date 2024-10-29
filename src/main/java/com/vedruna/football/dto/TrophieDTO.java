@@ -18,6 +18,8 @@ public class TrophieDTO {
     	this.idTrophy = trophie.getIdtrophie();
     	this.title = trophie.getTitle();
     	this.description = trophie.getDescription();
+    	
+    	
     }
 
 }

@@ -1,5 +1,6 @@
 package com.vedruna.football.persistance.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.vedruna.football.dto.TrophieDTO;
@@ -9,7 +10,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -31,8 +32,8 @@ public class Trophie {
 	@Column(name="description")
 	private String description;
 	
-	@OneToMany(mappedBy = "trophie")
-    private List<PlayerHasTrophy> playerHasTrophies;
+	@ManyToMany(mappedBy="TrophiesHasPlayer")
+    private List<Player> playerHasTrophies = new ArrayList<>();
 	
 	
 	public Trophie(TrophieDTO trophieDTO) {

@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.vedruna.football.dto.PlayerDTO;
+import com.vedruna.football.dto.TrophieDTO;
 import com.vedruna.football.persistance.models.Player;
+import com.vedruna.football.persistance.models.Trophie;
 import com.vedruna.football.persistance.repository.PlayerRepository;
 
 @Service
@@ -42,7 +44,7 @@ public class PlayerServiceImpI implements PlayerServiceI{
 		
 		newPlayer.setIdplayer(playerDTO.getIdPlayer());
 		newPlayer.setUsername(playerDTO.getUsername());
-		newPlayer.setPlayerHasTrophies(null);
+		newPlayer.setTrophiesHasPlayer(null);
 		playerRepository.save(newPlayer);
 		
 	}
@@ -70,6 +72,28 @@ public class PlayerServiceImpI implements PlayerServiceI{
 	public Player getPlayerById(int id) {
 		Player player = playerRepository.findByidplayer(id);
 		return player;
+	}
+
+	@Override
+	public void updatePlayer(PlayerDTO playerDTO) {
+		Player newPlayer = new Player();
+		List<Trophie> trophies = new ArrayList<>();
+		
+		newPlayer.setIdplayer(playerDTO.getIdPlayer());
+		newPlayer.setUsername(playerDTO.getUsername());
+		
+		for(TrophieDTO trophyDTO : playerDTO.getTrophiesPlayer()) {
+			Trophie trophy = new Trophie();
+	        trophy.setIdtrophie(trophyDTO.getIdTrophy());
+	        trophy.setTitle(trophyDTO.getTitle());
+	        trophy.setDescription(trophyDTO.getDescription());
+	        trophies.add(trophy);
+			
+		}
+		newPlayer.setTrophiesHasPlayer(trophies);
+		
+		playerRepository.save(newPlayer);
+					
 	}
 	
 	

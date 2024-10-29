@@ -1,15 +1,17 @@
 package com.vedruna.football.persistance.models;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,7 +30,8 @@ public class Player {
 	@Column(name="username")
 	private String username;
 	
-	@OneToMany(mappedBy = "player", cascade = CascadeType.ALL)
-    private List<PlayerHasTrophy> playerHasTrophies;
+	@ManyToMany
+	@JoinTable(name="players_has_trophies", joinColumns= {@JoinColumn(name="players_idplayer")}, inverseJoinColumns={@JoinColumn(name="trophies_idtrophie")})
+    private List<Trophie> TrophiesHasPlayer = new ArrayList<>();
 
 }
